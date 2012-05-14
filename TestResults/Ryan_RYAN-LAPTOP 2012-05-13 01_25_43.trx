@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="32ff8458-2335-4fe1-aa68-890cc613ee8c" name="Ryan@RYAN-LAPTOP 2012-05-13 01:25:43" runUser="Ryan-Laptop\Ryan" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="a64761e9-48bf-4167-937f-13bc7552b873">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Ryan_RYAN-LAPTOP 2012-05-13 01_25_43">
+      <DeploymentItem filename="C:\Users\Ryan\Dropbox\Projects\LogViewer\LogViewer\LogViewer\bin\Debug\LogViewer.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-05-13T01:25:43.9334891-05:00" queuing="2012-05-13T01:25:44.4465185-05:00" start="2012-05-13T01:25:44.5445241-05:00" finish="2012-05-13T01:25:45.5695827-05:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="parseEventTest" storage="c:\users\ryan\dropbox\projects\logviewer\logviewer\logviewertest\bin\debug\logviewertest.dll" id="0013f3e0-7833-e7a0-1ce8-87d6eb9c7a91">
+      <Execution id="cd00eb6f-8557-4f10-8ede-f1ecbd6331cf" />
+      <TestMethod codeBase="C:/Users/Ryan/Dropbox/Projects/LogViewer/LogViewer/LogViewerTest/bin/Debug/LogViewerTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="LogViewerTest.LogParserTest, LogViewerTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="parseEventTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0013f3e0-7833-e7a0-1ce8-87d6eb9c7a91" executionId="cd00eb6f-8557-4f10-8ede-f1ecbd6331cf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="cd00eb6f-8557-4f10-8ede-f1ecbd6331cf" testId="0013f3e0-7833-e7a0-1ce8-87d6eb9c7a91" testName="parseEventTest" computerName="RYAN-LAPTOP" duration="00:00:00.1249605" startTime="2012-05-13T01:25:44.5975271-05:00" endTime="2012-05-13T01:25:45.4925783-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cd00eb6f-8557-4f10-8ede-f1ecbd6331cf">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;LogViewer.KillEvent&gt;. Actual:&lt;LogViewer.KillEvent&gt;. Kill event parsed incorrectly</Message>
+          <StackTrace>   at LogViewerTest.LogParserTest.parseEventTest() in C:\Users\Ryan\Dropbox\Projects\LogViewer\LogViewer\LogViewerTest\LogParserTest.cs:line 82
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

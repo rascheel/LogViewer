@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="1d73d460-056f-47b6-a824-ed85fa284924" name="Ryan@RYAN-LAPTOP 2012-05-13 01:13:04" runUser="Ryan-Laptop\Ryan" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="a64761e9-48bf-4167-937f-13bc7552b873">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment userDeploymentRoot="C:\Users\Ryan\Dropbox\Projects\LogViewer\LogViewer\TestResults" useDefaultDeploymentRoot="false" enabled="false" runDeploymentRoot="Ryan_RYAN-LAPTOP 2012-05-13 01_13_04">
+      <DeploymentItem filename="C:\Users\Ryan\Dropbox\Projects\LogViewer\LogViewer\LogViewer\bin\Debug\LogViewer.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-05-13T01:13:04.2894412-05:00" queuing="2012-05-13T01:13:04.3014418-05:00" start="2012-05-13T01:13:04.3524448-05:00" finish="2012-05-13T01:13:05.1984931-05:00" />
+  <ResultSummary outcome="Inconclusive">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="1" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="parseEventTest" storage="c:\users\ryan\dropbox\projects\logviewer\logviewer\logviewertest\bin\debug\logviewertest.dll" id="0013f3e0-7833-e7a0-1ce8-87d6eb9c7a91">
+      <Execution id="1cbddc71-b90a-4488-8881-9e74c93522cb" />
+      <TestMethod codeBase="C:/Users/Ryan/Dropbox/Projects/LogViewer/LogViewer/LogViewerTest/bin/Debug/LogViewerTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="LogViewerTest.LogParserTest, LogViewerTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="parseEventTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0013f3e0-7833-e7a0-1ce8-87d6eb9c7a91" executionId="1cbddc71-b90a-4488-8881-9e74c93522cb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="1cbddc71-b90a-4488-8881-9e74c93522cb" testId="0013f3e0-7833-e7a0-1ce8-87d6eb9c7a91" testName="parseEventTest" computerName="RYAN-LAPTOP" duration="00:00:00.0632352" startTime="2012-05-13T01:13:04.4184485-05:00" endTime="2012-05-13T01:13:05.1444901-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1cbddc71-b90a-4488-8881-9e74c93522cb">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at LogViewerTest.LogParserTest.parseEventTest() in C:\Users\Ryan\Dropbox\Projects\LogViewer\LogViewer\LogViewerTest\LogParserTest.cs:line 78
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

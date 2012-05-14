@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
+  <asmv1:assemblyIdentity name="LogViewer.exe" version="1.0.0.3" publicKeyToken="0ede9efe4e615c20" language="neutral" processorArchitecture="x86" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="LogViewer" version="1.0.4515.41851" language="neutral" processorArchitecture="x86" />
+    <commandLine file="LogViewer.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LogViewer.exe" size="38912">
+      <assemblyIdentity name="LogViewer" version="1.0.4515.41851" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>hX554Mam8lYOr/MjiOgjJYH5CF4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="LogViewer.exe.config" size="805">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>QIqbS2rVnKTlRWL4P9kUpXc05f0=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=Ryan-Laptop\Ryan" issuerKeyHash="49e42c7920fbe46a53cfb99bc8dc3bbf223f7874" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>3zzlmqmIgj6/gzY9NxF/YAQAolY=</DigestValue></Reference></SignedInfo><SignatureValue>YZZbzG6MvLCcIq8pAQRaxP+HOY/nNINQhqpEYrx0bWW40Ukn043ZrwYeLfssoc2AyMAA8lAv1WEl1SuSrmndBitur1eqwF2Q+uVc3zKekM/0mwVjq1iijkbqNGYyobka1eykqQ93lHASeD5vz3hJpUA9Q7tqfHOizzBALQqXOb0=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>tyvr2lk++iK9eweteBqkiDSnfVsMftPv2gKu6yUpFK5YEFXXn9+aXg27DfKnKDecMNwxTWmguWbR3/2Hex0cVK5KU2ka4rTXLp9uzvoLYYM7uB9B6cGaK/nBm9ymUK6akSu9nq8c/X+2NxnD1+lumhdLN0OQGMuhSAJVJywUQt8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="56a20004607f11373d3683bf3e8288a99ae53cdf" Description="" Url=""><as:assemblyIdentity name="LogViewer.exe" version="1.0.0.3" publicKeyToken="0ede9efe4e615c20" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Ryan-Laptop\Ryan</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>bJLQ65prBYJFL9vA8Xn0wEG9ayk=</DigestValue></Reference></SignedInfo><SignatureValue>ZJn6u5nE6ouOooBg+ogks+lUJb6hOwxMBuilg5p1AiFDd+1ARjT4N43Iawdqu90PCBSyMTHRJs0Eyy94pbCiVE9omnp3LZM/DV5cweEw3kNLWJm9cKMqRVjbUHRcJQoe38hUck8B+p+4dzgRHKnWDA5VDdo6XSnZP19bd2OIfGM=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>tyvr2lk++iK9eweteBqkiDSnfVsMftPv2gKu6yUpFK5YEFXXn9+aXg27DfKnKDecMNwxTWmguWbR3/2Hex0cVK5KU2ka4rTXLp9uzvoLYYM7uB9B6cGaK/nBm9ymUK6akSu9nq8c/X+2NxnD1+lumhdLN0OQGMuhSAJVJywUQt8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB2TCCAUKgAwIBAgIQHsSK0G95mJFFagZ8e3IQBzANBgkqhkiG9w0BAQUFADArMSkwJwYDVQQDHiAAUgB5AGEAbgAtAEwAYQBwAHQAbwBwAFwAUgB5AGEAbjAeFw0xMjA1MTIxNDUwNTFaFw0xMzA1MTIyMDUwNTFaMCsxKTAnBgNVBAMeIABSAHkAYQBuAC0ATABhAHAAdABvAHAAXABSAHkAYQBuMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC3K+vaWT76Ir17B614GqSINKd9Wwx+0+/aAq7rJSkUrlgQVdef35peDbsN8qcoN5ww3DFNaaC5ZtHf/Yd7HRxUrkpTaRritNcun27O+gthgzu4H0HpwZor+cGb3KZQrpqRK72erxz9f7Y3GcPX6W6aF0s3Q5AYy6FIAlUnLBRC3wIDAQABMA0GCSqGSIb3DQEBBQUAA4GBAD9gMENUCD+sirQMoyGnKA+/DIDt/pirAK6LM5Sjo76SqLdT0Irg/+/egbZgtVU4XMI6YtPh+EbuRcPkTG+FDQdtl1hTvn4OKAoW6ZcavwPK1aeOCQuTvyK0K/RlCqHnJoStkBMHP0HoRvpTl/MDD8NTdJ45r4TsAhPbMAmnntZf</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
