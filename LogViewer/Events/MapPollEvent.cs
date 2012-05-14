@@ -7,13 +7,22 @@ namespace LogViewer
 {
     class MapPollEvent : LogEvent
     {
-
         public MapPollEvent(string _eventsLine, long _eventOrder, string _alias)
         {
             eventsLine = _eventsLine;
             eventOrder = _eventOrder;
             alias = _alias;
+        }
 
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            // TODO: Update get hash code to include member specific attributes
+            return base.GetHashCode();
         }
     }
 }

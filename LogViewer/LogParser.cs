@@ -9,7 +9,7 @@ namespace LogViewer
     {
         static long eventOrder = 0;
 
-        public static LogEvent parseEvent(string eventLine)
+        public static LogEvent parseEvent(DateTime date, string eventLine)
         {
             eventOrder++;
             eventLine = eventLine.Trim();
@@ -62,7 +62,7 @@ namespace LogViewer
                         i++;
                     }
 
-                    return new LoginEvent(eventLine, eventOrder, uID, alias);
+                    return new LoginEvent(eventLine, eventOrder, alias, uID);
 
                 }
                 else if (eventLine.Contains("<img"))

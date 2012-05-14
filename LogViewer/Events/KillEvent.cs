@@ -28,15 +28,19 @@ namespace LogViewer
             {
                 KillEvent toCompare = (KillEvent)obj;
 
-                return  (toCompare.alias == this.alias) &&
-                        (toCompare.deathAlias == this.deathAlias) &&
-                        (toCompare.eventOrder == this.eventOrder) &&
-                        (toCompare.eventsLine == this.eventsLine);
+                return  (toCompare.deathAlias == this.deathAlias) &&
+                        base.Equals(toCompare);
             }
             catch
             {
                 return false;
             }
+        }
+
+        public override int GetHashCode()
+        {
+            // TODO: Update get hash code to include member specific attributes
+            return base.GetHashCode();
         }
     }
 }

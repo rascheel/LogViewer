@@ -16,3 +16,17 @@ C:\Users\Ryan\Dropbox\Projects\LogViewer\LogViewer\LogViewer\bin\Debug\LogViewer
 C:\Users\Tomas\Documents\Visual Studio 11\Projects\LogViewer\LogViewer\LogViewer\bin\Debug\LogViewer.exe.config
 C:\Users\Tomas\Documents\Visual Studio 11\Projects\LogViewer\LogViewer\LogViewer\obj\x86\Debug\LogViewer.exe
 C:\Users\Tomas\Documents\Visual Studio 11\Projects\LogViewer\LogViewer\LogViewer\obj\x86\Debug\LogViewer.pdb
+C:\Users\Tomas\Documents\LogViewer\LogViewer\bin\Debug\LogViewer.exe.config
+C:\Users\Tomas\Documents\LogViewer\LogViewer\obj\x86\Debug\LogViewer.exe
+C:\Users\Tomas\Documents\LogViewer\LogViewer\obj\x86\Debug\LogViewer.pdb
+C:\Users\Tomas\Documents\LogViewer\LogViewer\bin\Debug\LogViewer.exe.manifest
+C:\Users\Tomas\Documents\LogViewer\LogViewer\bin\Debug\LogViewer.application
+C:\Users\Tomas\Documents\LogViewer\LogViewer\bin\Debug\LogViewer.exe
+C:\Users\Tomas\Documents\LogViewer\LogViewer\bin\Debug\LogViewer.pdb
+C:\Users\Tomas\Documents\LogViewer\LogViewer\obj\x86\Debug\LogViewer.csprojResolveAssemblyReference.cache
+C:\Users\Tomas\Documents\LogViewer\LogViewer\obj\x86\Debug\LogViewer.Form1.resources
+C:\Users\Tomas\Documents\LogViewer\LogViewer\obj\x86\Debug\LogViewer.Form2.resources
+C:\Users\Tomas\Documents\LogViewer\LogViewer\obj\x86\Debug\LogViewer.Properties.Resources.resources
+C:\Users\Tomas\Documents\LogViewer\LogViewer\obj\x86\Debug\LogViewer.csproj.GenerateResource.Cache
+C:\Users\Tomas\Documents\LogViewer\LogViewer\obj\x86\Debug\LogViewer.exe.manifest
+C:\Users\Tomas\Documents\LogViewer\LogViewer\obj\x86\Debug\LogViewer.application

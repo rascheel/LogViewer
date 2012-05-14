@@ -3,7 +3,7 @@
   <asmv1:assemblyIdentity name="LogViewer.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="LogViewer" version="1.0.4516.845" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="LogViewer" version="1.0.0.1" language="neutral" processorArchitecture="x86" />
     <commandLine file="LogViewer.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LogViewer.exe" size="38912">
-      <assemblyIdentity name="LogViewer" version="1.0.4516.845" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LogViewer.exe" size="41472">
+      <assemblyIdentity name="LogViewer" version="1.0.0.1" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>3cd9UZ1lCn8OoyInQcaYjsdQBCs=</dsig:DigestValue>
+        <dsig:DigestValue>pkiW11/OrXHb83rK03uIzgx0rKw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

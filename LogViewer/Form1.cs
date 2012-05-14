@@ -35,80 +35,134 @@ namespace LogViewer
 
         private void LoadFile()
         {
-            playerTracker.clear();
-            CurrentAliases.Clear();
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            Dictionary<DateTime, string> eachFileRead = new Dictionary<DateTime, string>();
+            ClearLogViewerData();
+            OpenFileDialog loadLogFilesDialog = InitializeOpenFileDialog();
 
-            openFileDialog1.InitialDirectory = "c:\\";
-            openFileDialog1.Filter = "txt files (*.txt)|*.txt";
-            openFileDialog1.FilterIndex = 2;
-            openFileDialog1.RestoreDirectory = true;
-            openFileDialog1.Multiselect = true;
-
-            if (!string.IsNullOrEmpty(PreviousPath))
+            if (loadLogFilesDialog.ShowDialog() == DialogResult.OK)
             {
-                openFileDialog1.InitialDirectory = PreviousPath;
+                AttemptToLoadFiles(eachFileRead, loadLogFilesDialog);         
             }
+        }
 
-            string theWholeFile = "";
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+        private void AttemptToLoadFiles(Dictionary<DateTime, string> eachFileRead, OpenFileDialog openFileDialog1)
+        {
+            try
             {
+                SortedDictionary<DateTime, string> logFiles = new SortedDictionary<DateTime, string>();
+                List<KeyValuePair<DateTime, string>> individualLines = new List<KeyValuePair<DateTime, string>>();
+
+                VerifyFileNames(openFileDialog1, logFiles);
+
+                ReadFiles(eachFileRead, logFiles);
+
+                Utils.PreviousPath = openFileDialog1.FileNames[0].Substring(0, openFileDialog1.FileNames[0].IndexOf(openFileDialog1.SafeFileNames[0]));
+
+                SeperateEachLine(eachFileRead, individualLines);
+
+                ParseEachLine(individualLines);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+            }
+        }
+
+        private void ParseEachLine(List<KeyValuePair<DateTime, string>> individualLines)
+        {
+            InitializeProgressBar();
+            for (int i = 0; i < individualLines.Count; i++)
+            {
+                ParseLog(individualLines.ElementAt(i).Key, individualLines.ElementAt(i).Value);
+                UpdateProgressBar(individualLines, i);
+            }
+            FinishProgress();
+        }
+
+        private void FinishProgress()
+        {
+            loadProgress.Visible = false;
+            loadStatusLabel.Text = "Load Completed Successfully!";
+            loadStatusLabel.Visible = true;
+            loadStatusLabel.Update();
+        }
+
+        private void UpdateProgressBar(List<KeyValuePair<DateTime, string>> individualLines, int i)
+        {
+            loadProgressValue = (float)i / (float)(individualLines.Count - 1);
+            loadProgress.Value = (int)(loadProgressValue * 100);
+            loadProgress.Update();
+        }
+
+        private void InitializeProgressBar()
+        {
+            loadProgressValue = 0.0f;
+            loadProgress.Visible = true;
+            loadStatusLabel.Visible = false;
+        }
+
+        private static void SeperateEachLine(Dictionary<DateTime, string> eachFileRead, List<KeyValuePair<DateTime, string>> individualLines)
+        {
+            for (int i = 0; i < eachFileRead.Count; i++)
+            {
+                foreach (var line in eachFileRead.Values.ElementAt(i).Split('\n'))
+                {
+                    individualLines.Add(new KeyValuePair<DateTime, string>(eachFileRead.Keys.ElementAt(i), line));
+                }
+            }
+        }
+
+        private static void ReadFiles(Dictionary<DateTime, string> eachFileRead, SortedDictionary<DateTime, string> logFiles)
+        {
+            for (int i = 0; i < logFiles.Count; i++)
+            {
+
+                StreamReader myStreamReader = new StreamReader(logFiles.Values.ElementAt(i));
+                eachFileRead.Add(logFiles.Keys.ElementAt(i), myStreamReader.ReadToEnd());
+            }
+        }
+
+        private void VerifyFileNames(OpenFileDialog openFileDialog1, SortedDictionary<DateTime, string> logFiles)
+        {
+            for (int i = 0; i < openFileDialog1.FileNames.Length; i++)
+            {
+                DateTime date;
                 try
                 {
-                    SortedDictionary<DateTime, string> logFiles = new SortedDictionary<DateTime, string>();
 
-                    for (int i = 0; i < openFileDialog1.FileNames.Length; i++)
-                    {
-                        DateTime date;
-                        try
-                        {
-
-                            date = parseFileName(openFileDialog1.FileNames[i]);
-                        }
-                        catch (Exception ex)
-                        {
-                            throw new Exception("You selected a log file with improper syntax. Proper Syntax is 'server_log_04_28_12'.");
-                        }
-
-                        logFiles.Add(date, openFileDialog1.FileNames[i]);
-                    }
-
-
-
-                    for (int i = 0; i < logFiles.Count; i++)
-                    {
-
-                        StreamReader myStreamReader = new StreamReader(logFiles.Values.ElementAt(i));
-                        theWholeFile += myStreamReader.ReadToEnd();
-                    }
-
-                    PreviousPath = openFileDialog1.FileNames[0].Substring(0, openFileDialog1.FileNames[0].IndexOf(openFileDialog1.SafeFileNames[0]));
+                    date = parseFileName(openFileDialog1.FileNames[i]);
                 }
-                catch (Exception ex)
+                catch
                 {
-                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
-                    return;
+                    throw new Exception("You selected a log file with improper syntax. Proper Syntax is 'server_log_04_28_12'.");
                 }
 
-                List<string> individualLines = theWholeFile.Split('\n').ToList();
-                loadProgressValue = 0.0f;
-                loadProgress.Visible = true;
-                loadStatusLabel.Visible = false;
-                for (int i = 0; i < individualLines.Count; i++)
-                {
-                    ParseLog(individualLines[i]);
-                    loadProgressValue = (float)i / (float)(individualLines.Count - 1);
-                    loadProgress.Value = (int)(loadProgressValue * 100);
-                    loadProgress.Update();
-                }
-                loadProgress.Visible = false;
-                loadStatusLabel.Text = "Load Completed Successfully!";
-                loadStatusLabel.Visible = true;
-                loadStatusLabel.Update();
-
-                
+                logFiles.Add(date, openFileDialog1.FileNames[i]);
             }
+        }
+
+        private void ClearLogViewerData()
+        {
+            playerTracker.clear();
+            CurrentAliases.Clear();
+        }
+
+        private OpenFileDialog InitializeOpenFileDialog()
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            ofd.InitialDirectory = "c:\\";
+            ofd.Filter = "txt files (*.txt)|*.txt";
+            ofd.FilterIndex = 2;
+            ofd.RestoreDirectory = true;
+            ofd.Multiselect = true;
+
+            if (!string.IsNullOrEmpty(Utils.PreviousPath))
+            {
+                ofd.InitialDirectory = Utils.PreviousPath;
+            }
+
+            return ofd;
         }
 
         private void UpdateProgress(object sender, System.EventArgs e)
@@ -132,16 +186,14 @@ namespace LogViewer
             dateToReturn = new DateTime(year, month, day);
 
             return dateToReturn;
-
-
         }
         
 
-        private void ParseLog(string IndividualLine)
+        private void ParseLog(DateTime date, string IndividualLine)
         {
             string eventLine = IndividualLine;
             //Console.WriteLine(eventLine);
-            LogEvent current = LogParser.parseEvent(eventLine);
+            LogEvent current = LogParser.parseEvent(date, eventLine);
             if (current != null)
             {
                 if (current.GetType() == typeof(LoginEvent))
@@ -373,7 +425,7 @@ namespace LogViewer
 
         private List<Player> SortPlayerList(List<Player> players)
         {
-            int ascending = ((comboBoxAscendingDescending.Text == "Ascending") ? 1 : -1);
+            int ascending = ((comboBoxAscendingDescending.Text == "Descending") ? -1 : 1);
             switch (comboBoxSortBy.Text)
             {
                 case "UID":
@@ -403,8 +455,7 @@ namespace LogViewer
                     break;
             }
 
-            return players;
-            
+            return players;            
         }
 
         private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -419,39 +470,8 @@ namespace LogViewer
         {
             string about = "";
             about += "Log Viewer was created by POM_Wind with help from Bellicosity. Send any questions, comments, or bug reports to scheel.ryan@gmail.com.";
-            about += string.Format("\n\nCurrent Version = {0}",PublishVersion);
+            about += string.Format("\n\nCurrent Version = {0}", Utils.PublishVersion);
             MessageBox.Show(about, "About");
         }
-
-        private string PublishVersion
-        {
-            get
-            {
-                if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
-                {
-                    Version ver = System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion;
-                    return string.Format("{0}.{1}.{2}.{3}", ver.Major, ver.Minor, ver.Build, ver.Revision);
-                }
-                else
-                    return "Not Published";
-            }
-        }
-
-        private string PreviousPath
-        {
-            get
-            {
-                return Properties.Settings.Default.PreviousPath;
-            }
-
-            set
-            {
-                Properties.Settings.Default.PreviousPath = value;
-                Properties.Settings.Default.Save();
-            }
-        }
-
-     
-        
     }
 }

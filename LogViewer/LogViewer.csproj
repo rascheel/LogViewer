@@ -78,7 +78,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChatEvent.cs" />
+    <Compile Include="Events\ChatEvent.cs" />
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,18 +92,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="KickEvent.cs" />
-    <Compile Include="KillEvent.cs" />
-    <Compile Include="LogEvent.cs" />
-    <Compile Include="LoginEvent.cs" />
+    <Compile Include="Events\KickEvent.cs" />
+    <Compile Include="Events\KillEvent.cs" />
+    <Compile Include="Events\LogEvent.cs" />
+    <Compile Include="Events\LoginEvent.cs" />
     <Compile Include="LogParser.cs" />
-    <Compile Include="PermaBanEvent.cs" />
+    <Compile Include="Events\PermaBanEvent.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerTracker.cs" />
-    <Compile Include="MapPollEvent.cs" />
+    <Compile Include="Events\MapPollEvent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TmpBanEvent.cs" />
+    <Compile Include="Events\TmpBanEvent.cs" />
+    <Compile Include="Utils.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -121,7 +122,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="app.config" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="LogViewer_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

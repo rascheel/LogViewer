@@ -10,6 +10,7 @@ namespace LogViewer
         protected string eventsLine;
         protected long eventOrder;
         protected string alias;
+        protected DateTime eventDateTime;
 
         protected LogEvent()
         {
@@ -25,6 +26,28 @@ namespace LogViewer
         public string getEventLine()
         {
             return eventsLine;
+        }
+
+        public override bool Equals(object obj)
+        {
+            try
+            {
+                LogEvent le = (LogEvent)obj;
+
+                return  le.alias == this.alias &&
+                        le.eventOrder == this.eventOrder &&
+                        le.eventsLine == this.eventsLine;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            // TODO: Update get hash code to include member specific attributes
+            return base.GetHashCode();
         }
 
         /*public LogEvent(string _eventsLine, int _eventOrder)

@@ -146,6 +146,11 @@ namespace LogViewer
             return ((Player)obj).userID.Equals(this.userID);
         }
 
+        public override int GetHashCode()
+        {
+            // TODO: Update get hash code to properly call all parts of the Player class
+            return base.GetHashCode();
+        }
 
         public int getKills()
         {
@@ -182,12 +187,6 @@ namespace LogViewer
             return isPermaBanned;
         }
 
-        /// <summary>
-        /// Returns whether or not the player contains part of the alias
-        /// </summary>
-        /// <param name="aliasPart">Part of the alias to search for</param>
-        /// <param name="caseSensitive">Whether or not to be case sensitive</param>
-        /// <returns>True if the player has an alias resembling the aliasPart</returns>
         internal bool hasAliasContaining(string aliasPart, bool caseSensitive)
         {
             return aliases.Any(x => caseSensitive ? x.Contains(aliasPart) : x.ToLower().Contains(aliasPart.ToLower()));
@@ -243,5 +242,11 @@ namespace LogViewer
         public string PermaBanned { get { return isPermaBanned.ToString(); } }
 
         public int NumberOfAliases { get { return getNumberOfAliases(); } }
+
+        public bool IsAdmin { get { return isAdmin; } }
+
+        public bool IsOnWatchList { get { return isOnWatchList; } }
+
+        public bool IsPom { get { return isPOM; } }
     }
 }

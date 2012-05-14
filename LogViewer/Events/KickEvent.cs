@@ -12,7 +12,12 @@ namespace LogViewer
             eventsLine = _eventsLine;
             eventOrder = _eventOrder;
             alias = _alias;
+        }
 
+        public override int GetHashCode()
+        {
+            // TODO: Update get hash code to include member specific attributes
+            return base.GetHashCode();
         }
     }
 }
