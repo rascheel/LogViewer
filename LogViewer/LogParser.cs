@@ -120,12 +120,26 @@ namespace LogViewer
                 {
                     string alias = "";
 
+                    string tempEventLine = eventLine.Substring(11);
+
+                    if(eventLine.Contains("started a poll to ban"))
+                    {
+                        alias = tempEventLine.Substring(0, tempEventLine.IndexOf(" started a poll to ban "));
+                    }
+                    else
+                    {
+                        alias = tempEventLine.Substring(0, tempEventLine.IndexOf(" started a poll to kick "));
+                    }
+                    alias = alias.Trim();
+
+                    /*
                     int i = 11;
                     while (eventLineArray[i] != ' ')
                     {
                         alias += eventLineArray[i];
                         i++;
                     }
+                    */
 
                     return new KickBanPollEvent(eventLine, eventOrder, alias);
 
@@ -134,12 +148,19 @@ namespace LogViewer
                 {
                     string alias = "";
 
+                    string tempEventLine = eventLine.Substring(11);
+
+                    alias = tempEventLine.Substring(0, tempEventLine.IndexOf(" started a poll to change "));
+                    alias = alias.Trim();
+
+                    /*
                     int i = 11;
                     while (eventLineArray[i] != ' ')
                     {
                         alias += eventLineArray[i];
                         i++;
                     }
+                    */
 
                     return new MapPollEvent(eventLine, eventOrder, alias);
                 }
@@ -147,12 +168,19 @@ namespace LogViewer
                 {
                     string alias = "";
 
+                    string tempEventLine = eventLine.Substring(11);
+
+                    alias = tempEventLine.Substring(0, tempEventLine.IndexOf(" is kicked"));
+                    alias = alias.Trim();
+
+                    /*
                     int i = 11;
                     while (eventLineArray[i] != ' ')
                     {
                         alias += eventLineArray[i];
                         i++;
                     }
+                    */
 
                     return new KickEvent(eventLine, eventOrder, alias);
 
@@ -161,12 +189,19 @@ namespace LogViewer
                 {
                     string alias = "";
 
+                    string tempEventLine = eventLine.Substring(11);
+
+                    alias = tempEventLine.Substring(0, tempEventLine.IndexOf(" is banned temporarily"));
+                    alias = alias.Trim();
+
+                    /*
                     int i = 11;
                     while (eventLineArray[i] != ' ')
                     {
                         alias += eventLineArray[i];
                         i++;
                     }
+                    */
 
                     return new TmpBanEvent(eventLine, eventOrder, alias);
                 }
@@ -174,12 +209,19 @@ namespace LogViewer
                 {
                     string alias = "";
 
+                    string tempEventLine = eventLine.Substring(11);
+
+                    alias = tempEventLine.Substring(0, tempEventLine.IndexOf(" is banned permanently by "));
+                    alias = alias.Trim();
+
+                    /*
                     int i = 11;
                     while (eventLineArray[i] != ' ')
                     {
                         alias += eventLineArray[i];
                         i++;
                     }
+                    */
 
                     return new PermaBanEvent(eventLine, eventOrder, alias);
                 }

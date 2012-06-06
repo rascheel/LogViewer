@@ -12,3 +12,10 @@ C:\Users\Tomas\Documents\LogViewer\LogViewerTest\bin\Debug\LogViewer.pdb
 C:\Users\Tomas\Documents\LogViewer\LogViewerTest\obj\Debug\LogViewerTest.csprojResolveAssemblyReference.cache
 C:\Users\Tomas\Documents\LogViewer\LogViewerTest\obj\Debug\LogViewerTest.dll
 C:\Users\Tomas\Documents\LogViewer\LogViewerTest\obj\Debug\LogViewerTest.pdb
+C:\Users\Ryan\Documents\GitHub\LogViewer\LogViewerTest\bin\Debug\LogViewerTest.dll
+C:\Users\Ryan\Documents\GitHub\LogViewer\LogViewerTest\bin\Debug\LogViewerTest.pdb
+C:\Users\Ryan\Documents\GitHub\LogViewer\LogViewerTest\bin\Debug\LogViewer.exe
+C:\Users\Ryan\Documents\GitHub\LogViewer\LogViewerTest\bin\Debug\LogViewer.pdb
+C:\Users\Ryan\Documents\GitHub\LogViewer\LogViewerTest\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Ryan\Documents\GitHub\LogViewer\LogViewerTest\obj\Debug\LogViewerTest.dll
+C:\Users\Ryan\Documents\GitHub\LogViewer\LogViewerTest\obj\Debug\LogViewerTest.pdb
